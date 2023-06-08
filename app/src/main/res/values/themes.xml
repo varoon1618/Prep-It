@@ -5,5 +5,15 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.FirstApp" parent="Base.Theme.FirstApp" />
+    <style name="Theme.FirstApp" parent="Base.Theme.FirstApp">
+        <item name="colorPrimary">@color/dark_grey</item>
+    </style>
+
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/dark_blue</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/baseline_hive_24</item>
+        <item name="postSplashScreenTheme">@style/Theme.FirstApp</item>
+    </style>
+
+
 </resources>
