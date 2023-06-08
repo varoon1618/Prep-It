@@ -11,7 +11,7 @@
 
     <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/dark_blue</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/baseline_hive_24</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo1</item>
         <item name="postSplashScreenTheme">@style/Theme.FirstApp</item>
     </style>
 

@@ -3,8 +3,11 @@ package com.example.firstapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,14 +27,26 @@ public class MainActivity extends AppCompatActivity {
 
     String api = "https://api.edamam.com/api/recipes/v2?type=public&app_id=6d289bce&app_key=e3c92bc15780f1669b17ef15df5fc7a1&diet=high-protein&diet=low-carb&cuisineType=Indian&mealType=Dinner&mealType=Lunch&calories=100-300&random=true";
     ArrayList<Recipe> recipes = new ArrayList<>();
+    Button nutritionButton ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         setContentView(R.layout.activity_main);
+        nutritionButton = findViewById(R.id.nutritionButton);
+        nutritionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNutritionAct();
+            }
+        });
         //getData();
     }
 
+    public void openNutritionAct(){
+        Intent intent = new Intent(this,NutritionActivity.class);
+        startActivity(intent);
+    }
 
     public void getData(){
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -87,4 +102,5 @@ public class MainActivity extends AppCompatActivity {
 // Add the request to the RequestQueue.
         queue.add(stringRequest);
     }
+
 }
