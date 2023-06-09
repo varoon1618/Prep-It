@@ -9,8 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class NutritionActivity extends AppCompatActivity {
 
@@ -58,8 +59,27 @@ public class NutritionActivity extends AppCompatActivity {
 
     public void addMoreDetails(){
         if(nameText.getText().toString().equals("")||heightText.getText().toString().equals("")||weightText.getText().toString().equals("")||(maleOption.isChecked()==false && femaleOption.isChecked()==false)){
-            
+            Snackbar.make(findViewById(R.id.coordLayout2),"Please enter all values",Snackbar.LENGTH_SHORT).show();
+        }else{
+            MainActivity.users.add(createUser());
+            Intent intent = new Intent(this,NutrionActivity2.class);
+            startActivity(intent);
+            Log.i("User",MainActivity.users.get(0).geName());
         }
 
+    }
+    public User createUser(){
+        int gender;
+        if(maleOption.isChecked()){
+            gender = 1;
+        }else{
+            gender = 2;
+        }
+        String name = nameText.getText().toString();
+        double weight = Double.parseDouble(weightText.getText().toString());
+        double height = Double.parseDouble(heightText.getText().toString());
+        User user = new User(name,weight,height,gender);
+
+        return user;
     }
 }

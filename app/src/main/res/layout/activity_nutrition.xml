@@ -1,149 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple"
     tools:context=".NutritionActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="413dp"
-        android:layout_height="579dp"
-        android:divider="@drawable/divider"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:showDividers="middle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="305dp"
-            android:layout_height="55dp"
-            android:height="50dp"
-            android:background="@drawable/textbox"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Name"
-            android:inputType="text"
-            android:textColorHint="@color/dark_grey" />
-
-        <EditText
-            android:id="@+id/weight"
-            android:layout_width="305dp"
-            android:layout_height="55dp"
-            android:background="@drawable/textbox"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Current Weight (kg)"
-            android:inputType="number"
-            android:textColorHint="@color/dark_grey" />
-
-        <EditText
-            android:id="@+id/height"
-            android:layout_width="305dp"
-            android:layout_height="55dp"
-            android:background="@drawable/textbox"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Height(cm)"
-            android:inputType="number"
-            android:textColorHint="@color/dark_grey" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="317dp"
-            android:divider="@drawable/smaller_divider"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:showDividers="middle">
+            android:layout_width="409dp"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="413dp"
-                android:layout_height="121dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="305dp"
-                    android:layout_height="55dp"
-                    android:background="@drawable/textbox"
-                    android:gravity="center"
-                    android:text="Gender"
-                    android:textSize="18dp" />
-
-                <RadioGroup
-                    android:layout_width="305dp"
-                    android:layout_height="60dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/male"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Male"
-                        android:textSize="18dp" />
-
-                    <RadioButton
-                        android:id="@+id/female"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Female"
-                        android:textSize="18dp" />
-                </RadioGroup>
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/textView4"
                 android:layout_width="match_parent"
-                android:layout_height="162dp"
-                android:divider="@drawable/smaller_divider"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/hvdcomicsans"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:showDividers="middle">
+                android:text="Enter Following Details"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
 
-                <Button
-                    android:id="@+id/continueButton"
-                    android:layout_width="250dp"
-                    android:layout_height="60dp"
-                    android:text="Continue" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="Find out your daily calorific intake and" />
 
-                <Button
-                    android:id="@+id/home_button"
-                    android:layout_width="250dp"
-                    android:layout_height="60dp"
-                    android:text="Home Page" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:text="macro nutrients required to meet your goals" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="413dp"
+            android:layout_height="579dp"
+            android:divider="@drawable/divider"
+            android:showDividers="middle"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
 
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="305dp"
+                android:layout_height="55dp"
+                android:height="50dp"
+                android:background="@drawable/textbox"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Name"
+                android:inputType="text"
+                android:textColorHint="@color/dark_grey" />
+
+            <EditText
+                android:id="@+id/weight"
+                android:layout_width="305dp"
+                android:layout_height="55dp"
+                android:background="@drawable/textbox"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Current Weight (kg)"
+                android:inputType="number"
+                android:textColorHint="@color/dark_grey" />
+
+            <EditText
+                android:id="@+id/height"
+                android:layout_width="305dp"
+                android:layout_height="55dp"
+                android:background="@drawable/textbox"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Height(cm)"
+                android:inputType="number"
+                android:textColorHint="@color/dark_grey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="317dp"
+                android:divider="@drawable/smaller_divider"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <LinearLayout
+                    android:layout_width="413dp"
+                    android:layout_height="121dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="305dp"
+                        android:layout_height="55dp"
+                        android:background="@drawable/textbox"
+                        android:gravity="center"
+                        android:text="Gender"
+                        android:textSize="18dp" />
+
+                    <RadioGroup
+                        android:layout_width="305dp"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/male"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Male"
+                            android:textSize="18dp" />
+
+                        <RadioButton
+                            android:id="@+id/female"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Female"
+                            android:textSize="18dp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="162dp"
+                    android:divider="@drawable/smaller_divider"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <Button
+                        android:id="@+id/continueButton"
+                        android:layout_width="250dp"
+                        android:layout_height="60dp"
+                        android:text="Continue" />
+
+                    <Button
+                        android:id="@+id/home_button"
+                        android:layout_width="250dp"
+                        android:layout_height="60dp"
+                        android:text="Home Page" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="150dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Enter Following Details"
-            android:textSize="24dp"
-            android:gravity="center"
-            android:fontFamily="@font/hvdcomicsans"
-            android:textColor="@color/white"/>
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

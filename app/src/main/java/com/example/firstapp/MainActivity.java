@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     String api = "https://api.edamam.com/api/recipes/v2?type=public&app_id=6d289bce&app_key=e3c92bc15780f1669b17ef15df5fc7a1&diet=high-protein&diet=low-carb&cuisineType=Indian&mealType=Dinner&mealType=Lunch&calories=100-300&random=true";
     ArrayList<Recipe> recipes = new ArrayList<>();
+    public static ArrayList<User> users = new ArrayList<>();
     private Button nutritionButton ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
