@@ -7,43 +7,143 @@
     android:background="@color/purple"
     tools:context=".NutritionActivity">
 
-    <TableLayout
-        android:layout_width="408dp"
-        android:layout_height="487dp"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="413dp"
+        android:layout_height="579dp"
+        android:divider="@drawable/divider"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:showDividers="middle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TableRow
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="305dp"
+            android:layout_height="55dp"
+            android:height="50dp"
+            android:background="@drawable/textbox"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Name"
+            android:inputType="text"
+            android:textColorHint="@color/dark_grey" />
+
+        <EditText
+            android:id="@+id/weight"
+            android:layout_width="305dp"
+            android:layout_height="55dp"
+            android:background="@drawable/textbox"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Current Weight (kg)"
+            android:inputType="number"
+            android:textColorHint="@color/dark_grey" />
+
+        <EditText
+            android:id="@+id/height"
+            android:layout_width="305dp"
+            android:layout_height="55dp"
+            android:background="@drawable/textbox"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Height(cm)"
+            android:inputType="number"
+            android:textColorHint="@color/dark_grey" />
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="317dp"
+            android:divider="@drawable/smaller_divider"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:showDividers="middle">
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="192dp"
-                android:layout_height="match_parent"
-                android:text="HELLO"
-                android:textAlignment="center"
-                android:textColor="#FFFF" />
+            <LinearLayout
+                android:layout_width="413dp"
+                android:layout_height="121dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="209dp"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="#FFFF" />
-        </TableRow>
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="305dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/textbox"
+                    android:gravity="center"
+                    android:text="Gender"
+                    android:textSize="18dp" />
 
-        <TableRow
+                <RadioGroup
+                    android:layout_width="305dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Male"
+                        android:textSize="18dp" />
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Female"
+                        android:textSize="18dp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="162dp"
+                android:divider="@drawable/smaller_divider"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <Button
+                    android:id="@+id/continueButton"
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:text="Continue" />
+
+                <Button
+                    android:id="@+id/home_button"
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:text="Home Page" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:text="Enter Following Details"
+            android:textSize="24dp"
+            android:gravity="center"
+            android:fontFamily="@font/hvdcomicsans"
+            android:textColor="@color/white"/>
+    </LinearLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
