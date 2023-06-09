@@ -53,7 +53,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="413dp"
             android:layout_height="579dp"
-            android:divider="@drawable/divider"
+            android:divider="@drawable/smaller_divider"
             android:showDividers="middle"
             android:gravity="center_horizontal"
             android:orientation="vertical"
@@ -90,6 +90,17 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Height(cm)"
+                android:inputType="number"
+                android:textColorHint="@color/dark_grey" />
+
+            <EditText
+                android:id="@+id/age"
+                android:layout_width="305dp"
+                android:layout_height="55dp"
+                android:background="@drawable/textbox"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Age(16-80)"
                 android:inputType="number"
                 android:textColorHint="@color/dark_grey" />
 

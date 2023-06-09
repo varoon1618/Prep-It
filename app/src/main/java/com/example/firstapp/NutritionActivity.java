@@ -19,6 +19,7 @@ public class NutritionActivity extends AppCompatActivity {
     private EditText nameText;
     private EditText weightText;
     private EditText heightText;
+    private EditText ageText;
     private RadioButton maleOption;
     private RadioButton femaleOption;
     private Button continueButton;
@@ -31,6 +32,7 @@ public class NutritionActivity extends AppCompatActivity {
         nameText = findViewById(R.id.name);
         weightText = findViewById(R.id.weight);
         heightText = findViewById(R.id.height);
+        ageText = findViewById(R.id.height);
         maleOption = findViewById(R.id.male);
         femaleOption = findViewById(R.id.female);
         continueButton = findViewById(R.id.continueButton);
@@ -78,8 +80,8 @@ public class NutritionActivity extends AppCompatActivity {
         String name = nameText.getText().toString();
         double weight = Double.parseDouble(weightText.getText().toString());
         double height = Double.parseDouble(heightText.getText().toString());
-        User user = new User(name,weight,height,gender);
-
+        int age = Integer.parseInt(ageText.getText().toString());
+        User user = new User(name,weight,height,age,gender);
         return user;
     }
 }
