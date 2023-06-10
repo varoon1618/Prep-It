@@ -77,8 +77,6 @@ public class NutrionActivity2 extends AppCompatActivity {
     }
 
     public void returnHomePage(){
-        int id = sedentary.getId();
-        Log.i("sedentary", String.valueOf(id));
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
@@ -87,12 +85,13 @@ public class NutrionActivity2 extends AppCompatActivity {
         if(radioGroup1.getCheckedRadioButtonId()==-1 || radioGroup2.getCheckedRadioButtonId()==-1){
             Snackbar.make(findViewById(R.id.coordLayout2),"Please enter all values",Snackbar.LENGTH_SHORT).show();
         }else {
-            idealCalories = findCalories()*findActivityFactor()+findSurplus();
+            idealCalories = Math.round(findCalories()*findActivityFactor()+findSurplus());
             double idealCarbs = Math.round((0.45*idealCalories)/4);
             double idealProtein = Math.round((0.35*idealCalories)/4);
             double idealFats = Math.round((0.20*idealCalories)/9);
             Macro macro = new Macro(idealCalories,idealCarbs,idealProtein,idealFats);
             MainActivity.macros.add(macro);
+
             Intent intent = new Intent(this, DisplayMacros.class);
             startActivity(intent);
         }
@@ -106,6 +105,9 @@ public class NutrionActivity2 extends AppCompatActivity {
         }else{
             calories= 10*user.getWeight()+6.25*user.getHeight()-5* user.getAge()-131;
         }
+        Log.i("weight ", String.valueOf(user.getWeight()));
+        Log.i("height ", String.valueOf(user.getHeight()));
+        Log.i("age",String.valueOf(user.getAge()));
         return calories;
     }
 
@@ -125,5 +127,7 @@ public class NutrionActivity2 extends AppCompatActivity {
         String str_surplus = calorieSurplusMap.get(buttonText);
         int surplus = Integer.parseInt(str_surplus);
         return surplus;
+
+        //66 + 13.7*weight + 4.95*height -6.8*age
     }
 }

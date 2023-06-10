@@ -32,7 +32,7 @@ public class NutritionActivity extends AppCompatActivity {
         nameText = findViewById(R.id.name);
         weightText = findViewById(R.id.weight);
         heightText = findViewById(R.id.height);
-        ageText = findViewById(R.id.height);
+        ageText = findViewById(R.id.age);
         maleOption = findViewById(R.id.male);
         femaleOption = findViewById(R.id.female);
         continueButton = findViewById(R.id.continueButton);
