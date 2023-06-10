@@ -17,6 +17,9 @@
         android:theme="@style/Theme.FirstApp"
         tools:targetApi="31">
         <activity
+            android:name=".DisplayMacros"
+            android:exported="false" />
+        <activity
             android:name=".NutrionActivity2"
             android:exported="false" />
         <activity

@@ -49,14 +49,14 @@ public class NutrionActivity2 extends AppCompatActivity {
         radioGroup1 = findViewById(R.id.radioGroup1);
         radioGroup2 = findViewById(R.id.radioGroup2);
 
-        hashMap.put("2131296758","1.2"); //sedentary
-        hashMap.put("2131296755","1.37");//light activity
-        hashMap.put("2131296751","1.55");//active
-        hashMap.put("2131296760","1.725");//very active
+        hashMap.put("Sedentary (Little to no exercise)","1.2"); //sedentary
+        hashMap.put("Lightly Active (Exercise less than 3 days a week)","1.37");//light activity
+        hashMap.put("Active (Exercise 3-5 days a week)","1.55");//active
+        hashMap.put("Very Active (Exercise everyday)","1.725");//very active
 
-        calorieSurplusMap.put("2131296756","-350");
-        calorieSurplusMap.put("2131296757","0");
-        calorieSurplusMap.put("2131296753","350");
+        calorieSurplusMap.put("Lose weight(0.5kg per week)","-350");
+        calorieSurplusMap.put("Maintain current weight","0");
+        calorieSurplusMap.put("Gain Weight(0.5kg per week)","350");
 
 
         homepage.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +77,8 @@ public class NutrionActivity2 extends AppCompatActivity {
     }
 
     public void returnHomePage(){
+        int id = sedentary.getId();
+        Log.i("sedentary", String.valueOf(id));
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
@@ -91,6 +93,8 @@ public class NutrionActivity2 extends AppCompatActivity {
             double idealFats = Math.round((0.20*idealCalories)/9);
             Macro macro = new Macro(idealCalories,idealCarbs,idealProtein,idealFats);
             MainActivity.macros.add(macro);
+            Intent intent = new Intent(this, DisplayMacros.class);
+            startActivity(intent);
         }
     }
 
@@ -107,16 +111,18 @@ public class NutrionActivity2 extends AppCompatActivity {
 
     public double findActivityFactor(){
         int id = radioGroup1.getCheckedRadioButtonId();
-        String str_id = String.valueOf(id);
-        String str_factor = hashMap.get(str_id);
+        RadioButton button = findViewById(id);
+        String buttonText = button.getText().toString();
+        String str_factor = hashMap.get(buttonText);
         double factor = Double.parseDouble(str_factor);
         return factor;
     }
 
     public int findSurplus(){
         int id = radioGroup2.getCheckedRadioButtonId();
-        String str_id = String.valueOf(id);
-        String str_surplus = calorieSurplusMap.get(str_id);
+        RadioButton button = findViewById(id);
+        String buttonText = button.getText().toString();
+        String str_surplus = calorieSurplusMap.get(buttonText);
         int surplus = Integer.parseInt(str_surplus);
         return surplus;
     }
