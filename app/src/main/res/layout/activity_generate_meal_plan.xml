@@ -80,9 +80,10 @@
                         android:textColor="@color/black" />
 
                     <Spinner
-                        android:id="@+id/spinner"
+                        android:id="@+id/breakfastCuisines"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
+                        android:entries="@array/cuisines"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -123,9 +124,10 @@
                         android:textColor="@color/black" />
 
                     <Spinner
-                        android:id="@+id/spinner2"
+                        android:id="@+id/lunchCuisine"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
+                        android:entries="@array/cuisines"
                         android:layout_weight="1" />
                 </LinearLayout>
             </LinearLayout>
@@ -163,7 +165,7 @@
                         android:textColor="@color/black" />
 
                     <Spinner
-                        android:id="@+id/spinner3"
+                        android:id="@+id/dinnerCuisine"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_weight="1" />
@@ -172,8 +174,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="105dp"
+                android:layout_height="125dp"
+                android:gravity="center_horizontal"
                 android:orientation="vertical">
+                <TextView
+                    android:layout_width="350dp"
+                    android:layout_height="25dp"
+                    android:text="(The following preferences are applied to all 3 meals)"
+                    android:textColor="@color/white"></TextView>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="49dp"
@@ -190,9 +198,10 @@
                         android:textColor="@color/black" />
 
                     <Spinner
-                        android:id="@+id/spinner4"
+                        android:id="@+id/otherPref"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
+                        android:entries="@array/preferences"
                         android:layout_weight="1" />
                 </LinearLayout>
 
@@ -203,22 +212,24 @@
 
                     <TextView
                         android:id="@+id/textView8"
-                        android:layout_width="450dp"
+                        android:layout_width="470dp"
                         android:layout_height="48dp"
                         android:layout_weight="1"
                         android:background="@drawable/textbox"
                         android:gravity="center"
-                        android:text="Ingredient to be excluded"
+                        android:text="Ingredient to be excluded (if any)"
                         android:textColor="@color/black" />
 
                     <EditText
-                        android:id="@+id/editTextText"
+                        android:id="@+id/allergen"
                         android:layout_width="400dp"
                         android:layout_height="48dp"
                         android:layout_weight="1"
                         android:ems="10"
                         android:inputType="text"
-                        android:text="pissoff" />
+                        android:textColorHint="@color/dark_grey"
+                        android:hint="ingredient name"
+                        />
 
 
                 </LinearLayout>
