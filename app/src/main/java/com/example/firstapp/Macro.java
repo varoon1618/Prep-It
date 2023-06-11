@@ -1,10 +1,13 @@
 package com.example.firstapp;
 
+/**
+ * Macro class is used to hold all the ideal values for a user
+ */
 public class Macro {
-    double idealCalories;
-    double idealCarbs;
-    double idealProtein;
-    double idealFats;
+    double idealCalories; // daily calorific intake
+    double idealCarbs; // daily carbs in g
+    double idealProtein; // daily protein in g
+    double idealFats; // daily fats in g
 
     public Macro(double cal,double carbs,double protein,double fats){
         this.idealCalories = cal;
@@ -12,6 +15,9 @@ public class Macro {
         this.idealProtein = protein;
         this.idealFats = fats;
     }
+
+    // getters
+
     public double getIdealCalories() {
         return idealCalories;
     }
