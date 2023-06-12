@@ -6,12 +6,9 @@
         <item>American</item>
         <item>Asian</item>
         <item>British</item>
-        <item>Chinese</item>
-        <item>Central European</item>
         <item>French</item>
         <item>Indian</item>
         <item>Italian</item>
-        <item>Japanese</item>
         <item>Mexican</item>
         <item>South American</item>
     </string-array>
@@ -19,7 +16,6 @@
     <string-array name="preferences">
         <item>No preferences</item>
         <item>Dairy free</item>
-        <item>Egg free</item>
         <item>Fish free</item>
         <item>Vegetarian</item>
         <item>Vegan</item>
